@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class GatewayCtrl {
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Reference(stub = "org.dfw.dubbo.api.echo.EchoService")
+    @Reference
     EchoService echoService;
 
     public void callEchoService() {
