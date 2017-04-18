@@ -1,5 +1,6 @@
 package org.dfw.dubbo.ctrl.gateway;
 
+import com.alibaba.dubbo.common.Constants;
 import com.alibaba.dubbo.config.*;
 import com.alibaba.dubbo.config.spring.AnnotationBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -47,5 +48,12 @@ public class GatewayCtrlRunner {
     @Bean
     public AnnotationBean annotationBean() {
         return new AnnotationBean();
+    }
+
+    @Bean
+    public MonitorConfig monitorConfig() {
+        MonitorConfig monitorConfig = new MonitorConfig();
+        monitorConfig.setProtocol(Constants.REGISTRY_PROTOCOL);
+        return monitorConfig;
     }
 }

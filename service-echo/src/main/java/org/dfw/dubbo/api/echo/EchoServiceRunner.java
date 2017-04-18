@@ -1,5 +1,6 @@
 package org.dfw.dubbo.api.echo;
 
+import com.alibaba.dubbo.common.Constants;
 import com.alibaba.dubbo.config.*;
 import com.alibaba.dubbo.config.spring.AnnotationBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -52,4 +53,10 @@ public class EchoServiceRunner {
         return annotationBean;
     }
 
+    @Bean
+    public MonitorConfig monitorConfig() {
+        MonitorConfig monitorConfig = new MonitorConfig();
+        monitorConfig.setProtocol(Constants.REGISTRY_PROTOCOL);
+        return monitorConfig;
+    }
 }
